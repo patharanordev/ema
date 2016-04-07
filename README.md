@@ -18,7 +18,7 @@ Time Period = (2 / Percentage) - 1
 3% Example:  Time Period = (2 / 0.03) - 1 = 65.67 time periods
 ```
 
-## Using the function
+## Using the function with array
 
 An example below, I added `exponentialMovingAVG` function to maths.js. So you will see I call it via the file.
 ```
@@ -40,6 +40,59 @@ console.log(result);
 ```
 
 You can across check the result with You can see more detail from [StockCharts](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:moving_averages)
+
+## Using the function with object array
+
+An example below, I added `exponentialMovingAVGWithObject` function to maths.js. So you will see I call it via the file.
+```
+<!DOCTYPE html>
+<html>	
+	<head>		
+		<meta charset="UTF-8">		
+		<title>Test</title>
+		<script src="js/maths.js"></script>
+		<script>
+			var prices = [
+				{date:0, data:22.27, ema:null}, 
+				{date:0, data:22.19, ema:null}, 
+				{date:0, data:22.08, ema:null}, 
+				{date:0, data:22.17, ema:null}, 
+				{date:0, data:22.18, ema:null}, 
+				{date:0, data:22.13, ema:null}, 
+				{date:0, data:22.23, ema:null}, 
+				{date:0, data:22.43, ema:null}, 
+				{date:0, data:22.24, ema:null}, 
+				{date:0, data:22.29, ema:null}, 
+				{date:0, data:22.15, ema:null}, 
+				{date:0, data:22.39, ema:null}, 
+				{date:0, data:22.38, ema:null}, 
+				{date:0, data:22.61, ema:null}, 
+				{date:0, data:23.36, ema:null}, 
+				{date:0, data:24.05, ema:null}, 
+				{date:0, data:23.75, ema:null}, 
+				{date:0, data:23.83, ema:null}, 
+				{date:0, data:23.95, ema:null}, 
+				{date:0, data:23.63, ema:null}, 
+				{date:0, data:23.82, ema:null}, 
+				{date:0, data:23.87, ema:null}, 
+				{date:0, data:23.65, ema:null}, 
+				{date:0, data:23.19, ema:null}, 
+				{date:0, data:23.10, ema:null}, 
+				{date:0, data:23.33, ema:null}, 
+				{date:0, data:22.68, ema:null}, 
+				{date:0, data:23.10, ema:null}, 
+				{date:0, data:22.40, ema:null}, 
+				{date:0, data:22.17, ema:null}
+			];
+			
+			exponentialMovingAVGWithObject(prices, 29, 10);
+			console.log(prices);
+		</script>
+	</head>	
+	<body>		
+	</body>
+</html>
+```
 
 ## Note
 
