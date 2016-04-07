@@ -69,7 +69,7 @@ var exponentialMovingAVGWithObject = function(dataObjArray, focusPriceIndex, tim
 					}
 				}
 			} else if(focusPriceIndex == timePeriods - 1){
-				var sma = this.simpleMovingAVG(dataObjArray, timePeriods);
+				var sma = this.simpleMovingAVGWithObject(dataObjArray, timePeriods);
 
 				if(sma!=false) {
 					dataObjArray[focusPriceIndex].ema = sma;
