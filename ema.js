@@ -42,3 +42,45 @@ var exponentialMovingAVG = function(dataArray, focusPriceIndex, timePeriods, res
 
 	return result;
 };
+
+
+var exponentialMovingAVGWithObject = function(dataObjArray, focusPriceIndex, timePeriods){
+	var result = false;
+
+	try {
+		// Smoothing factor
+		var alpha = parseFloat(2.0 / (1 + timePeriods));
+
+		if(focusPriceIndex < dataObjArray.length){
+			if(focusPriceIndex > timePeriods-1){
+				if(focusPriceIndex-1 > -1){
+
+					result = this.exponentialMovingAVG(dataObjArray, (focusPriceIndex-1), timePeriods);
+					//console.log('prevEMA#' + (focusPriceIndex-1) + ' : ' + dataObjArray[focusPriceIndex-1].ema);
+
+					if(result!=false){
+						dataObjArray[focusPriceIndex].ema = (dataObjArray[focusPriceIndex].data * alpha) + (dataObjArray[focusPriceIndex-1].ema * (1 - alpha));
+						//console.log('EMA ' + dataObjArray[focusPriceIndex].date + ' : ' + dataObjArray[focusPriceIndex].ema);
+						focusPriceIndex -= 1;
+
+						result = dataObjArray[focusPriceIndex].ema;
+					} else {
+						result = false;
+					}
+				}
+			} else if(focusPriceIndex == timePeriods - 1){
+				var sma = this.simpleMovingAVG(dataObjArray, timePeriods);
+
+				if(sma!=false) {
+					dataObjArray[focusPriceIndex].ema = sma;
+					result = sma;
+				}
+			} 
+		}
+	} catch(err) {
+		result = false;
+		console.log("EMA Error : " + err);
+	}
+
+	return result;
+}
