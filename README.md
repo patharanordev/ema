@@ -43,7 +43,7 @@ You can across check the result with You can see more detail from [StockCharts](
 
 ## Using the function with object array
 
-An example below, I added `exponentialMovingAVGWithObject` function to maths.js. So you will see I call it via the file.
+Sometime you may use the data based on date/time, you can call `exponentialMovingAVGWithObject` function to calculate EMA. The data object format is `{ date:NO_FIX_DATE_FORMAT, data:?, ema:? }`. Output from calculate will assign to `Array[index].ema`.
 ```
 <!DOCTYPE html>
 <html>	
@@ -53,36 +53,36 @@ An example below, I added `exponentialMovingAVGWithObject` function to maths.js.
 		<script src="js/maths.js"></script>
 		<script>
 			var prices = [
-				{date:0, data:22.27, ema:null}, 
-				{date:0, data:22.19, ema:null}, 
-				{date:0, data:22.08, ema:null}, 
-				{date:0, data:22.17, ema:null}, 
-				{date:0, data:22.18, ema:null}, 
-				{date:0, data:22.13, ema:null}, 
-				{date:0, data:22.23, ema:null}, 
-				{date:0, data:22.43, ema:null}, 
-				{date:0, data:22.24, ema:null}, 
-				{date:0, data:22.29, ema:null}, 
-				{date:0, data:22.15, ema:null}, 
-				{date:0, data:22.39, ema:null}, 
-				{date:0, data:22.38, ema:null}, 
-				{date:0, data:22.61, ema:null}, 
-				{date:0, data:23.36, ema:null}, 
-				{date:0, data:24.05, ema:null}, 
-				{date:0, data:23.75, ema:null}, 
-				{date:0, data:23.83, ema:null}, 
-				{date:0, data:23.95, ema:null}, 
-				{date:0, data:23.63, ema:null}, 
-				{date:0, data:23.82, ema:null}, 
-				{date:0, data:23.87, ema:null}, 
-				{date:0, data:23.65, ema:null}, 
-				{date:0, data:23.19, ema:null}, 
-				{date:0, data:23.10, ema:null}, 
-				{date:0, data:23.33, ema:null}, 
-				{date:0, data:22.68, ema:null}, 
-				{date:0, data:23.10, ema:null}, 
-				{date:0, data:22.40, ema:null}, 
-				{date:0, data:22.17, ema:null}
+				{date:'2010-03-24', data:22.27, ema:null}, 
+				{date:'2010-03-25', data:22.19, ema:null}, 
+				{date:'2010-03-26', data:22.08, ema:null}, 
+				{date:'2010-03-29', data:22.17, ema:null}, 
+				{date:'2010-03-30', data:22.18, ema:null}, 
+				{date:'2010-03-31', data:22.13, ema:null}, 
+				{date:'2010-04-01', data:22.23, ema:null}, 
+				{date:'2010-04-05', data:22.43, ema:null}, 
+				{date:'2010-04-06', data:22.24, ema:null}, 
+				{date:'2010-04-07', data:22.29, ema:null}, 
+				{date:'2010-04-08', data:22.15, ema:null}, 
+				{date:'2010-04-09', data:22.39, ema:null}, 
+				{date:'2010-04-12', data:22.38, ema:null}, 
+				{date:'2010-04-13', data:22.61, ema:null}, 
+				{date:'2010-04-14', data:23.36, ema:null}, 
+				{date:'2010-04-15', data:24.05, ema:null}, 
+				{date:'2010-04-16', data:23.75, ema:null}, 
+				{date:'2010-04-19', data:23.83, ema:null}, 
+				{date:'2010-04-20', data:23.95, ema:null}, 
+				{date:'2010-04-21', data:23.63, ema:null}, 
+				{date:'2010-04-22', data:23.82, ema:null}, 
+				{date:'2010-04-23', data:23.87, ema:null}, 
+				{date:'2010-04-26', data:23.65, ema:null}, 
+				{date:'2010-04-27', data:23.19, ema:null}, 
+				{date:'2010-04-28', data:23.10, ema:null}, 
+				{date:'2010-04-29', data:23.33, ema:null}, 
+				{date:'2010-04-30', data:22.68, ema:null}, 
+				{date:'2010-05-03', data:23.10, ema:null}, 
+				{date:'2010-05-04', data:22.40, ema:null}, 
+				{date:'2010-05-05', data:22.17, ema:null}
 			];
 			
 			exponentialMovingAVGWithObject(prices, 29, 10);
