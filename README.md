@@ -18,29 +18,6 @@ Time Period = (2 / Percentage) - 1
 3% Example:  Time Period = (2 / 0.03) - 1 = 65.67 time periods
 ```
 
-## Using the function with array
-
-An example below, I added `exponentialMovingAVG` function to maths.js. So you will see I call it via the file.
-```
-var maths = require('./func/maths.js');
-
-var prices = [
-	22.27, 22.19, 22.08, 22.17, 22.18,
-	22.13, 22.23, 22.43, 22.24, 22.29,
-	22.15, 22.39, 22.38, 22.61, 23.36,
-	24.05, 23.75, 23.83, 23.95, 23.63,
-	23.82, 23.87, 23.65, 23.19, 23.10,
-	23.33, 22.68, 23.10, 22.40, 22.17
-];
-
-var result = [];
-maths.exponentialMovingAVG(prices, 29, 10, result);
-
-console.log(result);
-```
-
-You can across check the result with You can see more detail from [StockCharts](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:moving_averages)
-
 ## Using the function with object array
 
 Sometime you may use the data based on date/time, you can call `exponentialMovingAVGWithObject` function to calculate EMA. The data object format is `{ date:NO_FIX_DATE_FORMAT, data:?, ema:? }`. Output from calculate will assign to `Array[index].ema`.
@@ -85,7 +62,7 @@ Sometime you may use the data based on date/time, you can call `exponentialMovin
 				{date:'2010-05-05', data:22.17, ema:null}
 			];
 			
-			exponentialMovingAVGWithObject(prices, 29, 10);
+			exponentialMovingAVG(prices, 29, 10);
 			console.log(prices);
 		</script>
 	</head>	
@@ -93,6 +70,8 @@ Sometime you may use the data based on date/time, you can call `exponentialMovin
 	</body>
 </html>
 ```
+
+You can across check the result with You can see more detail from [StockCharts](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:moving_averages)
 
 ## Note
 
