@@ -20,7 +20,7 @@ Time Period = (2 / Percentage) - 1
 
 ## Using the function with object array
 
-Sometime you may use the data based on date/time, you can call `exponentialMovingAVGWithObject` function to calculate EMA. The data object format is `{ date:NO_FIX_DATE_FORMAT, data:?, ema:? }`. Output from calculate will assign to `Array[index].ema`.
+Sometime you may use the data based on date/time, you can call `exponentialMovingAVG` function to calculate EMA. The data object format is `{ date:NO_FIX_DATE_FORMAT, data:?, ema:? }`. Output from calculate will assign to `Array[index].ema`.
 ```
 <!DOCTYPE html>
 <html>	
